@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
     var url = "https://jsonplaceholder.typicode.com/users";
     var uri = Uri.parse(url);
     var response = await client.get(uri);
-    print(response);
 
     if(response.statusCode == 200){
       List<dynamic> uList = jsonDecode(response.body);
