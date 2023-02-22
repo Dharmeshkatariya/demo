@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:apidata/model/userdata.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -81,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 20),
                         width: double.infinity,
-                        color: Colors.red[400],
+                        color: Colors.red[100],
                         child: const Text(
                           "Business Model",
                           style: TextStyle(
@@ -120,19 +119,15 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: Colors.white,
+          color: Colors.red[100],
         ),
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _customText(
-              text: "id : ${userData.id}",
-            ),
-            _customText(
-              text: "Name : ${userData.name}",
-            ),
+            _customText(text: "id : ${userData.id}",),
+            _customText(text: "Name : ${userData.name}",),
             _customText(text: "City : ${userData.address.city}"),
             _customText(text: "Website : ${userData.website}"),
             _customText(text: "Company Name : ${userData.company.name}"),
@@ -149,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _customText(text: "city : ${userData.address.city}"),
+                      _customText(text: "city : ${userData.address.city}".toUpperCase()),
                       _customText(text: "zip : ${userData.address.zipcode}"),
                     ],
                   ),
@@ -190,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Text(
       text!,
       style: const TextStyle(
-        fontSize: 14,
+        fontSize: 13,
         fontWeight: FontWeight.w500,
         color: Colors.black87,
       ),
@@ -209,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
         decoration: InputDecoration(
             suffixIcon: const Icon(
               Icons.search,
-              color: Colors.green,
+              color: Colors.red,
             ),
             hintText: "Search name",
             filled: true,
