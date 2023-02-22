@@ -65,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 20),
                         width: double.infinity,
-                        color: Colors.green,
+                        color: Colors.red[400],
                         child: const Text(
                           "Business Model",
                           style: TextStyle(
@@ -137,35 +136,34 @@ class _MyHomePageState extends State<MyHomePage> {
             _customText(text: "City : ${userData.address.city}"),
             _customText(text: "Website : ${userData.website}"),
             _customText(text: "Company Name : ${userData.company.name}"),
-
-           Container(
-             padding: const EdgeInsets.symmetric(horizontal: 2),
-             height: userData.isSelected ? 80 : 0,
-             child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 const Divider(
-                   height: 20,
-                   color: Colors.grey,
-                 ),
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                     Text("city : ${userData.address.city}",style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black87),),
-                     Text("zip : ${userData.address.zipcode}",style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black87),),
-                   ],
-                 ),
-                 Text("street : ${userData.address.street}",style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black87),),
-               ],
-             ),
-           ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 2),
+              height: userData.isSelected ? 80 : 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Divider(
+                    height: 20,
+                    color: Colors.grey,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _customText(text: "city : ${userData.address.city}"),
+                      _customText(text: "zip : ${userData.address.zipcode}"),
+                    ],
+                  ),
+                  _customText(text: "street : ${userData.address.street}"),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  _visibleData(int index ) {
+  _visibleData(int index) {
     for (int i = 0; i < userList.length; i++) {
       if (i == index) {
         userList[i].isSelected = true;
@@ -173,9 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
         userList[i].isSelected = false;
       }
     }
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   _searchData(String str) {
@@ -216,6 +212,8 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.green,
             ),
             hintText: "Search name",
+            filled: true,
+            fillColor: Colors.white,
             labelText: "Search",
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
