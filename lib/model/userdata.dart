@@ -9,6 +9,7 @@ class UserData {
   late final String phone;
   late final String website;
   late final Company company;
+   bool isSelected = false;
 
   UserData.fromJson(Map<String, dynamic> json){
     id = json['id'];
