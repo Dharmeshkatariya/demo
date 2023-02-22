@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const Divider(
                     height: 20,
-                    color: Colors.grey,
+                    color: Colors.black,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _visibleData(int index) {
     for (int i = 0; i < userList.length; i++) {
       if (i == index) {
-        userList[i].isSelected = true;
+        userList[i].isSelected =  !userList[i].isSelected;
       } else {
         userList[i].isSelected = false;
       }
