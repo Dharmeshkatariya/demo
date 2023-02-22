@@ -1,4 +1,5 @@
 class UserData {
+
  UserData();
   late final int id;
   late final String name;
